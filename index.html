@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Currículo</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Lobster&family=Montserrat&display=swap" rel="stylesheet">
+  <script src="javascript/javascript.js"></script> 
+
+  <style>
+     #jogoContainer {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      height: 80%;
+      background-color: rgba(0, 0, 0, 0.9);
+      border-radius: 12px;
+      z-index: 9999;
+      padding: 10px;
+      box-shadow: 0 0 30px #000;
+    }
+
+    #jogoContainer iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    #fecharJogo {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: #ff5050;
+      border: none;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #fecharJogo:hover {
+      background: #ff1a1a;
+    }
+  </style>
+  
+</head>
+<body >
+<header>
+ <h1>Portifólio Leticia S. de Oliveira </h1>
+</header>
+<div id="mySidebar" class="sidebar"> 
+    <a href="javascript:void(0)"  class="closebtn" onclick="closeNav()">×</a>
+    <a href="#DadosPessoais">Dados Pessoais</a>
+    <a href="#Formaçâo">Formação</a>
+    <a href="#Habilidades">Habilidades</a>
+    <a href="#conhecimento">Conhecimento</a>
+    <a href="#Idiomas">Idiomas</a>
+    <a href="#Meu Portfólio">Meu Portfólio</a>
+  </div>  <!-- Conteúdo principal -->
+  <div id="main"> 
+    <button class="openbtn" onclick="openNav()">☰ Menu</button>
+        
+ <img src="img/Perfil.jpg" width="200" height="200">
+ 
+<article id="centro"><p>Meu nome é Letícia Souza, atualmente sou Jovem Aprendiz na Telefonica Vivo, atuando na área de Engenharia e Serviços ao Cliente.
+   Atualmente, curso Programação de Jogos Digitais no IFPR.</p></article>
+
+<article><section id="DadosPessoais"></section>
+<h2>Dados pessoais</h2>
+<p>Nome:Letícia Souza de Oliveira</p>
+<p>Email:o.leticiaa29@gmail.com</p>
+<p>Numero:(41)99197-1905</p></article>
+  
+<article><section id="Formação"></section>
+<h2>Formação </h2><ul>
+<li>Ensino Técnico Integrado ao Ensino médio de  Programação de Jogos Digitais </li>
+<li> Instituto Federal do Paraná.</li>
+<li> 2022 - Em Andamento.</li>
+
+</ul></article>
+<article>
+<section id="Conhecimento"></section>
+<h2>Conhecimento</h2>
+<ul>
+<li> Linguagem de programação: C, C++, C# e JavaScript;</li>
+<li> Linguagem de marcação/texto: HTML5;</li>
+<li> Linguagem de folha de estilo: CSS;</li>
+<li> Ambiente de desenvolvimento utilizado: Motor Gráfico Unity, Visual Studio, Code Blocks. Software de Modelagem: Blender; </li>
+<li> Software de Ilustração: Inkscape; </li>
+<li> Software de Som: Fmod, Audacity e Nuendo;</li>
+<li> Pacote office completo.</li>
+</ul>
+</article>
+<article>
+<section id="Habilidades"></section>
+<h2>Habilidades</h2>
+<ul>
+    <li> Modelagem 3D (experiência com Blender)</li>
+    <li> Ilustração 2D (conhecimento em Inkscape)</li>
+    <li> Desenvolvimento de jogos digitais</li>
+    <li>Trabalho em equipe, comunicação, criatividade.</li>
+</ul></article>
+
+<article>
+<section id="Idiomas"></section>
+<h2>Idiomas</h2>
+<ul>
+<li> Inglês - Intermediário</li>
+<li> Espanhol - básico</li>
+<li> Portugues- Fluente/Nativo </li>
+</ul></article>
+    
+
+<div class="carrossel-container">
+    <article id="centro">
+<section id="Meu Portfólio"></section>
+    <h2>Meu Portfólio</h2>
+</article>
+    <div class="carrossel">
+      
+      <!-- Botão para ir para a img anterior -->
+      <button class="carrossel-btn" onclick="mudarImagens(-1)">&#10094;</button>
+  
+      <div class="carrossel-imagens" id="carrossel-imagens">
+      <img src="img/start.png" alt="Logo Jogo Abelhinha" class="carrossel-imagem" onclick="abrirJogo()">
+      </div>
+
+        <button class="carrossel-btn" onclick="mudarImagens(1)">&#10095;</button>
+  
+    </div>
+  </div>
+
+    <div id="jogoContainer">
+    <button id="fecharJogo" onclick="fecharJogo()">X</button>
+    <iframe id="jogoIframe" src=""></iframe>
+    </div>
+
+         
+    <footer>
+        <p>&copy; 2025  - Todos os direitos reservados.</p>
+        <div class="botoes-fontes">  
+            <button onclick="document.body.style.fontFamily='Roboto'">Roboto</button>
+          <button onclick="document.body.style.fontFamily='Lobster'">Lobster</button>
+          <button onclick="document.body.style.fontFamily='Montserrat'">Montserrat</button>
+        </div>
+    </footer>   
+</div>
+<script>
+    function abrirJogo() {
+      document.getElementById('jogoContainer').style.display = 'block';
+      document.getElementById('jogoIframe').src = 'jogo/index.html';
+    }
+
+    function fecharJogo() {
+      document.getElementById('jogoContainer').style.display = 'none';
+      document.getElementById('jogoIframe').src = '';
+    }
+  </script>
+</body>
+</html>
